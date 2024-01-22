@@ -1,2 +1,2 @@
-# School-website
+# school_website
 My first real PAID Project 
