@@ -361,7 +361,8 @@ h3{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 45vh;
+    height: auto;
+    padding: 8rem 0;
 
 }
 .overlay{
@@ -371,22 +372,19 @@ h3{
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .2;
+    opacity: .4;
     background: #000000;
     }
 .image-background-container{
     position: relative;
-    top: 25%;
-    width: 80%;
+    max-width: 1230px;
     padding: 0 15px;
     margin: 0 auto;
 }
 .content{
     display: flex;
-    margin-left: -15px;
-    margin-right: -15px;
+    line-height: 1.5;
     align-items: center;
-    justify-content: center;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
     text-align: center;
@@ -406,28 +404,25 @@ h3{
 .content p{
     text-align: start;
 }
-.image-button{
-    justify-self: center;
-    align-self: center;
-    display: flex;
-    justify-items: start;
-    align-items: center;
-    margin-right: 100px;
-    border-radius: 30px;
-    width: 170px;
-    height: 40px;
-    padding: 0 15px;
-}
 .image-button a{
+    background-color: #fda638;
+    border: 2px solid #fda638;
+    border-radius: 40px;
     text-decoration: none;
     color: white;
+    padding: 1rem 1.5rem;
+    
 }
-
+@media (max-width:768px){
+    .content{
+        flex-wrap: wrap;
+    }
+}
 .teachers-section{
     padding: 7em 0;
     background-color: #fff;
     text-align: center;
-    width: 80%;
+    max-width: 1230px;
     margin: 0 auto;
 }
 .teachers-section p{
@@ -436,17 +431,17 @@ h3{
 }
 .teachers-span{
     color: #5d50c6;
-    font-size: 44px;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 .heading h2{
     color: #fda638;
-    font-size: 44px;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
 .heading2{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -457,17 +452,26 @@ h3{
     padding: 0 15px;
 }
 .staff{
+    width: 100%;
     display: flex;
     margin-bottom: 30px;
+    height: auto;
 }
 
 .image-staff{
     width: 100%;
-    height: 300px;
+    height: 300PX;
+}
+.img{
+    background-image: url("./pictures/teacher-1.jpg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
 }
 
 .img > img{
     height: 300px;
+    object-fit: cover;
 }
 
 .image-container-staff h3{
@@ -478,6 +482,21 @@ h3{
 }
 .image-container-staff p{
     color: rgba(0, 0, 0, 0.5)
+}
+@media (max-width: 992px){
+    .staff{
+        flex-wrap: wrap;
+
+    }
+    .image-container-staff{
+       flex: 0 0 50%;
+    }
+}
+
+@media (max-width:768px) {
+    .staff{
+        flex-direction: column;
+    }
 }
 
 /* #features{
