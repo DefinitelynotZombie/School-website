@@ -203,6 +203,84 @@ document.addEventListener("DOMContentLoaded", function () {
     // Trigger the fadeInElements function on page load
     fadeInElements();
 });
+// const navBar = document.querySelector("#nav-bar");
+// let offsetPosition = navBar.getBoundingClientRect().top + window.scrollY;
+
+// function updateOffsetPosition() {
+//     offsetPosition = navBar.getBoundingClientRect().top + window.scrollY;
+// }
+
+// function toggleFixedNavBar() {
+//     if (window.scrollY > offsetPosition) {
+//         // Add a class when the user has scrolled past the #nav-bar element
+//         navBar.classList.add("fixed-nav-bar", "animating");
+//     } else {
+//         // Remove the class when the user scrolls back up
+//         navBar.classList.remove("fixed-nav-bar", "animating");
+//     }
+// }
+
+// // Add an event listener for transition end to remove the animating class
+// navBar.addEventListener("transitionend", () => {
+//     navBar.classList.remove("animating");
+// });
+
+// window.addEventListener("scroll", toggleFixedNavBar);
+// window.addEventListener("resize", updateOffsetPosition);
+// const navBar = document.querySelector("#nav-bar");
+// const offsetPosition = navBar.offsetTop;
+// let isAnimating = false;
+
+// function toggleFixedNavBar() {
+//     if (window.scrollY > offsetPosition && !isAnimating) {
+//         // Add a class when the user has scrolled past the #nav-bar element
+//         navBar.classList.add("fixed-nav-bar", "animating");
+//         isAnimating = true;
+//     } else if (window.scrollY <= offsetPosition && isAnimating) {
+//         // Remove the class when the user scrolls back up
+//         navBar.classList.remove("fixed-nav-bar", "animating");
+//         isAnimating = false;
+//     }
+// }
+
+// // Add an event listener for transition end to remove the animating class
+// navBar.addEventListener("transitionend", () => {
+//     isAnimating = false;
+// });
+
+// window.addEventListener("scroll", toggleFixedNavBar);
+
+// function ani(){
+//     if(document.documentElement.scrollHeight > (document.documentElement.scrollHeight - 300)){
+//         window.addEventListener("scroll", function(){
+//             var section = document.querySelector("#nav-bar")
+//             section.classList.toggle("sticky",window.scrollY > 0 + 300);
+// })
+//     }
+// }   
+
+// ani()
+const body = document.body;
+let lastScroll = 0;
+window.addEventListener("scroll",() => {
+    let currentscroll = window.scrollY
+    if (currentscroll <= 0){
+        body.classList.remove("scroll-up")
+    }
+    if ( currentscroll > lastScroll && !body.classList.contains("scroll-down")){
+        body.classList.remove("scroll-up")
+        body.classList.add("scroll-down")
+    }
+    if ( currentscroll < lastScroll && body.classList.contains("scroll-down")){
+        body.classList.remove("scroll-down")
+        body.classList.add("scroll-up")
+    }
+    
+
+
+    lastScroll = currentscroll;
+})
+
 
 var div = document.querySelector(".image-container-staff")
 div.addEventListener("mouseover", function(){
@@ -214,12 +292,16 @@ function sideBar(){
     sidebar.style.display = 'flex'
 }
 
-document.querySelector(".fa-bars").addEventListener("click",sideBar)
-
-
 function closeBar(){
     const sidebar = document.querySelector(".side-bar")
     sidebar.style.display = 'none'
 }
 
-document.querySelector(".fa-xmark").addEventListener("click",closeBar)
+document.querySelector(".first-bar").addEventListener("click",sideBar)
+document.querySelector(".second-bar").addEventListener("click",closeBar)
+
+
+// document.querySelector(".fa-bars").addEventListener("click",closeBar)
+
+
+// console.log(document.documentElement.scrollHeight);
