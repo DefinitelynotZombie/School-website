@@ -203,7 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Trigger the fadeInElements function on page load
     fadeInElements();
 });
-// const navBar = document.querySelector("#nav-bar");
+const navBar = document.querySelector("#nav-bar");
+console.log(navBar.getBoundingClientRect().top)
 // let offsetPosition = navBar.getBoundingClientRect().top + window.scrollY;
 
 // function updateOffsetPosition() {
@@ -270,6 +271,9 @@ window.addEventListener("scroll",() => {
     if ( currentscroll > lastScroll && !body.classList.contains("scroll-down")){
         body.classList.remove("scroll-up")
         body.classList.add("scroll-down")
+        if (window.scrollY === 0){
+            body.classList.remove("scroll-down")
+        }
     }
     if ( currentscroll < lastScroll && body.classList.contains("scroll-down")){
         body.classList.remove("scroll-down")
