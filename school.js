@@ -268,23 +268,22 @@ window.addEventListener("scroll",() => {
     if (currentscroll <= 0){
         body.classList.remove("scroll-up")
     }
-    if ( currentscroll > lastScroll && !body.classList.contains("scroll-down")){
+
+    // if (window.scrollY <= 300){
+    //     body.classList.remove("scroll-down")
+    if (window.scrollY >= 400 && currentscroll > lastScroll && !body.classList.contains("scroll-down")){
         body.classList.remove("scroll-up")
         body.classList.add("scroll-down")
-        if (window.scrollY === 0){
-            body.classList.remove("scroll-down")
-        }
     }
+    // }
     if ( currentscroll < lastScroll && body.classList.contains("scroll-down")){
         body.classList.remove("scroll-down")
         body.classList.add("scroll-up")
     }
-    
-
 
     lastScroll = currentscroll;
 })
-
+// console.log(window.yy)
 
 var div = document.querySelector(".image-container-staff")
 div.addEventListener("mouseover", function(){
@@ -293,12 +292,18 @@ div.addEventListener("mouseover", function(){
 
 function sideBar(){
     const sidebar = document.querySelector(".side-bar")
+    document.querySelector(".first-bar").style.display = "none"
     sidebar.style.display = 'flex'
+
+    return false;//to prevent the anchor tag from taking me to the top of the screen  
 }
 
 function closeBar(){
     const sidebar = document.querySelector(".side-bar")
+    document.querySelector(".first-bar").style.display = "flex"
     sidebar.style.display = 'none'
+
+    return false;
 }
 
 document.querySelector(".first-bar").addEventListener("click",sideBar)
