@@ -21,16 +21,12 @@ body{
     padding: 20px 0;
     transition: all 0.3s ease-in-out;
 }
-
-/* #nav-bar.sticky{
-
-} */
 .scroll-down #nav-bar{
     transform: translate3d(0,-100%,0);
 }
 .scroll-up #nav-bar{
     padding: 5px 0;
-    filter: drop-shadow(0 -10px 20px rgb(170,170,170));
+    /* filter: drop-shadow(0 -10px 20px rgb(170,170,170)); */
 }
 
 .logo{
@@ -87,6 +83,7 @@ li a:hover{
     width: 250px;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
 
 }
@@ -101,22 +98,6 @@ li a:hover{
 .menu-button{
     display: none;
 }
-
-/* .fixed-nav-bar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white;
-    transform: translateY(0);
-    transition: all 0.3s ease-in-out;
-}
-.fixed-nav-bar.animating {
-    transform: translateY(-100%);
-    transition: all 0.3s ease-in-out;
-    /* opacity: 1; 
-}*/
 @media (max-width: 990px) {
     .hideOnMoblie{
         display: none;
@@ -462,6 +443,9 @@ h3{
 @media (max-width:768px){
     .content{
         flex-wrap: wrap;
+    }
+    .image-button{
+        margin-top: 50px;
     }
 }
 .teachers-section{
